@@ -17,10 +17,6 @@ import com.techadam.springdata.model.UserModel;
 import com.techadam.springdata.repository.SpringDataRestRepository;
 
 /**
- * 
- */
-
-/**
  * @author techadam
  *
  */
