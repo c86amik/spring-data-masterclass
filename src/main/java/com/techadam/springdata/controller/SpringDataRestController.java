@@ -60,15 +60,15 @@ public class SpringDataRestController {
     }
 	
 	@GetMapping("/getUserByFirstName/{firstName}")
-    public UserModel getUserDataByFirstName(@PathVariable(value = "firstName") String firstName) {
-    	UserModel userModel = springDataRestRepository.findByFirstName(firstName);
+    public List<UserModel> getUserDataByFirstName(@PathVariable(value = "firstName") String firstName) {
+    	List<UserModel> userModel = springDataRestRepository.findByFirstName(firstName);
     	LOGGER.info("getUserDataByFirstName -> Fetch the User Detail by First Name as : {}", firstName);
         return userModel;
     }
 	
 	@GetMapping("/getUserByLastName/{lastName}")
-    public UserModel getUserDataByLastName(@PathVariable(value = "lastName") String lastName) {
-    	UserModel userModel = springDataRestRepository.findByLastName(lastName);
+    public List<UserModel> getUserDataByLastName(@PathVariable(value = "lastName") String lastName) {
+		List<UserModel> userModel = springDataRestRepository.findByLastName(lastName);
     	LOGGER.info("getUserDataByLastName -> Fetch the User Detail by Last Name as : {}", lastName);
         return userModel;
     }

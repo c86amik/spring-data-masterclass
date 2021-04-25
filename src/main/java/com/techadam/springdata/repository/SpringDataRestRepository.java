@@ -3,6 +3,8 @@
  */
 package com.techadam.springdata.repository;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,9 +17,9 @@ import com.techadam.springdata.model.UserModel;
 @Repository
 public interface SpringDataRestRepository extends MongoRepository<UserModel, String>{
 	
-	public UserModel findByFirstName(String firstName);
+	public List<UserModel> findByFirstName(String firstName);
 	
-	public UserModel findByLastName(String lastName);
+	public List<UserModel> findByLastName(String lastName);
 	
 	public UserModel findByMobileNo(String mobileNo);
 	

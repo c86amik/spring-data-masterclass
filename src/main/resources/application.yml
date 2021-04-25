@@ -1,6 +1,6 @@
 spring:
   application:
-    name: apring-data-crud
+    name: spring-data-crud
   profiles: default
   data:
     mongodb:
