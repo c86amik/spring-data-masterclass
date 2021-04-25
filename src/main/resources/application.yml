@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: apring-data-crud
+  profiles: default
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/spring
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    serialization:
+      indent-output: true
+
+server:
+  port: 7111
+
+logging:
+  level:
+    ROOT: ERROR
+    org.springframework: ERROR
+    com.techadam.springdata: DEBUG
+  file:  /tmp/logs/application.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+springdoc:
+  packagesToScan: com.techadam.springdata
