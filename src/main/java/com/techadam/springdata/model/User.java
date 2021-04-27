@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  */
 @Document(collection = "userModel")
-public class UserModel implements Serializable {
+public class User implements Serializable {
 
 	/**
 	 * 
@@ -29,7 +29,7 @@ public class UserModel implements Serializable {
 	private String email;
 	private String panNo;
 	
-	public UserModel() {
+	public User() {
 	}
 	public String getId() {
 		return id;
@@ -76,7 +76,7 @@ public class UserModel implements Serializable {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("UserModel [id=");
+		builder.append("User [id=");
 		builder.append(id);
 		builder.append(", firstName=");
 		builder.append(firstName);

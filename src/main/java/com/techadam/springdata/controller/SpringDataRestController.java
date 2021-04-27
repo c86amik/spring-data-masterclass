@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.techadam.springdata.exception.SpringDataRestException;
-import com.techadam.springdata.model.UserModel;
+import com.techadam.springdata.model.User;
 import com.techadam.springdata.repository.SpringDataRestRepository;
 
 /**
@@ -29,77 +29,85 @@ public class SpringDataRestController {
 	private SpringDataRestRepository springDataRestRepository;
 	
 	@GetMapping("/allUsers")
-    public List<UserModel> getAllUserData() {
+    public List<User> getAllUserData() {
 		LOGGER.info("getAllUserData -> All Data are fetched");
 		return springDataRestRepository.findAll();
     }
 	
 	@PostMapping("/saveUser")
-    public UserModel saveUserData(@RequestBody UserModel userModel) {
+    public User saveUserData(@RequestBody User user) {
         LOGGER.info("saveUserData -> New Record of User saved");
-        return springDataRestRepository.save(userModel);
+        return springDataRestRepository.save(user);
     }
 	
 	@PutMapping("/updateUser/{id}")
-    public UserModel updateUserData(@PathVariable(value = "id") String userId, @RequestBody UserModel userModel) {
+    public User updateUserData(@PathVariable(value = "id") String userId, @RequestBody User user) {
         LOGGER.info("updateUserData -> Update the existing User Record");
-        UserModel model = springDataRestRepository.findById(userId)
+        User model = springDataRestRepository.findById(userId)
         		.orElseThrow(() -> new SpringDataRestException("User Record not found", userId));
         if (null != model) {
-        	return springDataRestRepository.save(userModel);
+        	return springDataRestRepository.save(user);
 		}
         return model;
     }
 
 	@GetMapping("/getUser/{id}")
-    public UserModel getUserDataById(@PathVariable(value = "id") String userId) {
-    	UserModel userModel = springDataRestRepository.findById(userId)
+    public User getUserDataById(@PathVariable(value = "id") String userId) {
+    	User user = springDataRestRepository.findById(userId)
     			.orElseThrow(() -> new SpringDataRestException("User Record not found", userId));
     	LOGGER.info("getUserDataById -> Fetch the User Detail by userId as : {}", userId);
-        return userModel;
+        return user;
     }
 	
 	@GetMapping("/getUserByFirstName/{firstName}")
-    public List<UserModel> getUserDataByFirstName(@PathVariable(value = "firstName") String firstName) {
-    	List<UserModel> userModel = springDataRestRepository.findByFirstName(firstName);
+    public List<User> getUserDataByFirstName(@PathVariable(value = "firstName") String firstName) {
+    	List<User> user = springDataRestRepository.findByFirstName(firstName);
     	LOGGER.info("getUserDataByFirstName -> Fetch the User Detail by First Name as : {}", firstName);
-        return userModel;
+        return user;
     }
 	
 	@GetMapping("/getUserByLastName/{lastName}")
-    public List<UserModel> getUserDataByLastName(@PathVariable(value = "lastName") String lastName) {
-		List<UserModel> userModel = springDataRestRepository.findByLastName(lastName);
+    public List<User> getUserDataByLastName(@PathVariable(value = "lastName") String lastName) {
+		List<User> user = springDataRestRepository.findByLastName(lastName);
     	LOGGER.info("getUserDataByLastName -> Fetch the User Detail by Last Name as : {}", lastName);
-        return userModel;
+        return user;
     }
 	
 	@GetMapping("/getUserByMobileNo/{mobileNo}")
-    public UserModel getUserDataByMobileNo(@PathVariable(value = "mobileNo") String mobileNo) {
-    	UserModel userModel = springDataRestRepository.findByMobileNo(mobileNo);
+    public User getUserDataByMobileNo(@PathVariable(value = "mobileNo") String mobileNo) {
+    	User user = springDataRestRepository.findByMobileNo(mobileNo);
     	LOGGER.info("getUserDataByMobileNo -> Fetch the User Detail by Mobile No as : {}", mobileNo);
-        return userModel;
+        return user;
     }
 	
 	@GetMapping("/getUserByEmail/{email}")
-    public UserModel getUserDataByEmail(@PathVariable(value = "email") String email) {
-    	UserModel userModel = springDataRestRepository.findByEmail(email);
+    public User getUserDataByEmail(@PathVariable(value = "email") String email) {
+    	User user = springDataRestRepository.findByEmail(email);
     	LOGGER.info("getUserDataByEmail -> Fetch the User Detail by Email as : {}", email);
-        return userModel;
+        return user;
     }
 	
 	@GetMapping("/getUserByPan/{panNo}")
-    public UserModel getUserDataByPan(@PathVariable(value = "panNo") String panNo) {
-    	UserModel userModel = springDataRestRepository.findByPanNo(panNo);
+    public User getUserDataByPan(@PathVariable(value = "panNo") String panNo) {
+    	User user = springDataRestRepository.findByPanNo(panNo);
     	LOGGER.info("getUserDataByPan -> Fetch the User Detail by PAN No as : {}", panNo);
-        return userModel;
+        return user;
     }
 	
 	@DeleteMapping("/deleteUser/{id}")
     public void deleteUser(@PathVariable(value = "id") String userId) {
-		UserModel userModel = springDataRestRepository.findById(userId)
+		User user = springDataRestRepository.findById(userId)
 				.orElseThrow(() -> new SpringDataRestException("User not found", userId));
-	    springDataRestRepository.delete(userModel);
+	    springDataRestRepository.delete(user);
     	LOGGER.info("deleteUser -> Delete the User of userId : {}", userId);
+    }
+	
+	@GetMapping("/getUserByName/{firstName}/{lastName}")
+    public User getUserByName(@PathVariable(value = "firstName") String firstName, 
+    		@PathVariable(value = "lastName") String lastName) {
+    	User user = springDataRestRepository.findByFirstAndLastName(firstName, lastName);
+    	LOGGER.info("getUserByName -> Fetch the User Detail by FirstName and LastName as : {}, {}", firstName, lastName);
+        return user;
     }
 	
 }

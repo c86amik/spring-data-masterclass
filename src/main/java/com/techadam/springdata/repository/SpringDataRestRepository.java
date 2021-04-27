@@ -6,24 +6,28 @@ package com.techadam.springdata.repository;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.techadam.springdata.model.UserModel;
+import com.techadam.springdata.model.User;
 
 /**
  * @author techadam
  *
  */
 @Repository
-public interface SpringDataRestRepository extends MongoRepository<UserModel, String>{
+public interface SpringDataRestRepository extends MongoRepository<User, String>{
 	
-	public List<UserModel> findByFirstName(String firstName);
+	public List<User> findByFirstName(String firstName);
 	
-	public List<UserModel> findByLastName(String lastName);
+	public List<User> findByLastName(String lastName);
 	
-	public UserModel findByMobileNo(String mobileNo);
+	public User findByMobileNo(String mobileNo);
 	
-	public UserModel findByEmail(String email);
+	public User findByEmail(String email);
 	
-	public UserModel findByPanNo(String panNo);
+	public User findByPanNo(String panNo);
+	
+	@Query("{$and: [{firstName: ?0}, {lastName: ?1}]}")
+	public User findByFirstAndLastName(String firstName, String lastName);
 }
