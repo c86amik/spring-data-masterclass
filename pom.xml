@@ -75,29 +75,6 @@
     				<skipTests>true</skipTests>
   				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>1.4.6</version>
-				<executions>
-					<execution>
-						<id>default</id>
-						<goals>
-							<goal>build</goal>
-							<!-- <goal>push</goal> -->
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<repository>amikchak/gokoders</repository>
-					<tag>${project.name}-${project.version}</tag>
-					<skipDockerInfo>true</skipDockerInfo>
-					<pullNewerImage>false</pullNewerImage>
-					<buildArgs>
-						<jar_file>${project.name}-${project.version}.jar</jar_file>
-					</buildArgs>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 	
