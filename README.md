@@ -23,13 +23,38 @@
 * Open the Postman and test the REST Endpoints
 
 ### Testing using Postman
-* <strong>Get All Users</strong> - localhost:7111/allUsers
-* <strong>Save an User</strong> - localhost:7111/saveUser
-* <strong>Update an User</strong> - localhost:7111/updateUser/{id}. Here <strong>{id}</strong> is the id of the record stored in MongoDB
-* <strong>Delete an User</strong> - localhost:7111/deleteUser/{id}
-* <strong>Get user by firstName</strong> - localhost:7111/getUserByFirstName/{firstName}
-* <strong>Get user by lastName</strong> - localhost:7111/getUserByLastName/{lastName}
-* <strong>Get user by mobileNo</strong> - localhost:7111/getUserByMobileNo/{mobileNo}
-* <strong>Get user by Email</strong> - localhost:7111/getUserByEmail/{email}
-* <strong>Get user by panNo</strong> - localhost:7111/getUserByPan/{panNo}
-* <strong>Get user by name</strong> - localhost:7111/getUserByName/{firstName}/{lastName}. Here <strong>name</strong> is the combination of <strong>firstName</strong> and <strong>lastName</strong>
+<ol>
+<li><strong>Get All Users</strong> - localhost:7111/allUsers</li>
+<li><strong>Save an User</strong> - localhost:7111/saveUser</li>
+<li><strong>Update an User</strong> - localhost:7111/updateUser/{id}. Here <strong>{id}</strong> is the id of the record stored in MongoDB</li>
+<li><strong>Delete an User</strong> - localhost:7111/deleteUser/{id}</li>
+<li><strong>Get user by firstName</strong> - localhost:7111/getUserByFirstName/{firstName}</li>
+<li><strong>Get user by lastName</strong> - localhost:7111/getUserByLastName/{lastName}</li>
+<li><strong>Get user by mobileNo</strong> - localhost:7111/getUserByMobileNo/{mobileNo}</li>
+<li><strong>Get user by Email</strong> - localhost:7111/getUserByEmail/{email}</li>
+<li><strong>Get user by panNo</strong> - localhost:7111/getUserByPan/{panNo}</li>
+<li><strong>Get user by name</strong> - localhost:7111/getUserByName/{firstName}/{lastName}. Here <strong>name</strong> is the combination of <strong>firstName</strong> and <strong>lastName</strong></li>
+</ol>
+
+#### Dummy JSON object
+* Body for the <strong>POST</strong> Method   
+<code>{
+	"firstName" : ${firstName},
+	"middleName" : ${middleName},
+	"lastName" : ${lastName},
+	"mobileNo" : ${mobileNo},
+	"email" : ${email},
+	"panNo" : ${panNo}
+}</code>
+* Body for the <strong>PUT</strong> method
+<code>{
+	“id” : ${mongo_ID},
+	"firstName" : ${firstName},
+	"middleName" : ${middleName},
+	"lastName" : ${lastName},
+	"mobileNo" : ${mobileNo},
+	"email" : ${email},
+	"panNo" : ${panNo}
+}</code>
+
+	
