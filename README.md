@@ -13,6 +13,10 @@
 
 
 ### Steps to clone and run the application
+* Install MongoDb
+* After installing, set the Environment Variable <strong>MONGO_HOME</strong>
+* To verify open Command Prompt and type <code>mongo -version</code>
+* Type <code>mongod</code> in the open terminal. It will run the daemon process of Mongo
 * Open Git Bash in your machine
 * Clone the application from github.com as   
 <code>git clone https://github.com/c86amik/spring-data-masterclass.git</code>
