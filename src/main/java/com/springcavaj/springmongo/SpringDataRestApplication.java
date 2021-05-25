@@ -1,4 +1,4 @@
-package com.techadam.springdata;
+package com.springcavaj.springmongo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

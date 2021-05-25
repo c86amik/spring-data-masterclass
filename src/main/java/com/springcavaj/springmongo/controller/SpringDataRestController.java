@@ -1,4 +1,4 @@
-package com.techadam.springdata.controller;
+package com.springcavaj.springmongo.controller;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.techadam.springdata.exception.SpringDataRestException;
-import com.techadam.springdata.model.User;
-import com.techadam.springdata.repository.SpringDataRestRepository;
+import com.springcavaj.springmongo.exception.SpringDataRestException;
+import com.springcavaj.springmongo.model.User;
+import com.springcavaj.springmongo.repository.SpringDataRestRepository;
 
 /**
- * @author techadam
+ * @author springcavaj
  *
  */
 @RestController

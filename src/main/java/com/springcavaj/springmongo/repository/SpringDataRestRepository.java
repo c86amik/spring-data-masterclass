@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.techadam.springdata.repository;
+package com.springcavaj.springmongo.repository;
 
 import java.util.List;
 
@@ -9,10 +9,10 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.techadam.springdata.model.User;
+import com.springcavaj.springmongo.model.User;
 
 /**
- * @author techadam
+ * @author springcavaj
  *
  */
 @Repository

@@ -1,10 +1,10 @@
 /**
  * 
  */
-package com.techadam.springdata.exception;
+package com.springcavaj.springmongo.exception;
 
 /**
- * @author techadam
+ * @author springcavaj
  *
  */
 public class SpringDataRestException extends RuntimeException {
