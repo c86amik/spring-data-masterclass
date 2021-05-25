@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.techadam</groupId>
-	<artifactId>spring-data-masterclass</artifactId>
+	<artifactId>spring-data-mongo-masterclass</artifactId>
 	<version>0.1</version>
 	<packaging>jar</packaging>
-	<name>spring-data-masterclass</name>
+	<name>spring-data-mongo-masterclass</name>
 	<description>REST Service to define how spring-data works using Mongo as Database</description>
 
 	<properties>
