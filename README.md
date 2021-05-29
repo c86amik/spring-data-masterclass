@@ -19,7 +19,7 @@
 * Type <code>mongod</code> in the open terminal. It will run the daemon process of Mongo
 * Open Git Bash or even you can open Command Prompt (if you are using Windows) or Terminal (if you are using MAC) in your machine
 * Clone the application from github.com as   
-<code>git clone https://github.com/c86amik/spring-data-masterclass.git</code>
+<code>git clone https://github.com/c86amik/spring-data-mongo-masterclass.git</code>
 * Open either <strong>STS</strong> or <strong>Eclipse</strong> and import the application as <strong>Maven</strong> project
 * After the application got successfully imported in either <strong>STS</strong> or <strong>Eclipse</strong>
 * Right Click on the application, select the <strong>Run As</strong> option, and then select <strong>Spring Boot App</strong>
