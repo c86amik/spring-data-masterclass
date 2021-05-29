@@ -7,7 +7,7 @@ package com.springcavaj.springmongo.exception;
  * @author springcavaj
  *
  */
-public class SpringDataRestException extends RuntimeException {
+public class SpringDataMongoRestException extends RuntimeException {
 	
 	/**
 	 * 
@@ -17,10 +17,10 @@ public class SpringDataRestException extends RuntimeException {
 	private String exceptionMessage;
 	private String exceptionCause;
 	
-	public SpringDataRestException() {
+	public SpringDataMongoRestException() {
 	}
 	
-	public SpringDataRestException(String exceptionMessage, String exceptionCause) {
+	public SpringDataMongoRestException(String exceptionMessage, String exceptionCause) {
 		super();
 		this.exceptionMessage = exceptionMessage;
 		this.exceptionCause = exceptionCause;
@@ -41,7 +41,7 @@ public class SpringDataRestException extends RuntimeException {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("SpringDataRestException [exceptionMessage=");
+		builder.append("SpringDataMongoRestException [exceptionMessage=");
 		builder.append(exceptionMessage);
 		builder.append(", exceptionCause=");
 		builder.append(exceptionCause);

@@ -16,7 +16,7 @@ import com.springcavaj.springmongo.model.User;
  *
  */
 @Repository
-public interface SpringDataRestRepository extends MongoRepository<User, String>{
+public interface SpringDataMongoRestRepository extends MongoRepository<User, String>{
 	
 	public List<User> findByFirstName(String firstName);
 	

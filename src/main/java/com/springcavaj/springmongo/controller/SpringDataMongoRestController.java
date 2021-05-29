@@ -12,100 +12,100 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springcavaj.springmongo.exception.SpringDataRestException;
+import com.springcavaj.springmongo.exception.SpringDataMongoRestException;
 import com.springcavaj.springmongo.model.User;
-import com.springcavaj.springmongo.repository.SpringDataRestRepository;
+import com.springcavaj.springmongo.repository.SpringDataMongoRestRepository;
 
 /**
  * @author springcavaj
  *
  */
 @RestController
-public class SpringDataRestController {
+public class SpringDataMongoRestController {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(SpringDataRestController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(SpringDataMongoRestController.class);
 	
 	@Autowired
-	private SpringDataRestRepository springDataRestRepository;
+	private SpringDataMongoRestRepository springDataMongoRestRepository;
 	
 	@GetMapping("/allUsers")
     public List<User> getAllUserData() {
 		LOGGER.info("getAllUserData -> All Data are fetched");
-		return springDataRestRepository.findAll();
+		return springDataMongoRestRepository.findAll();
     }
 	
 	@PostMapping("/saveUser")
     public User saveUserData(@RequestBody User user) {
         LOGGER.info("saveUserData -> New Record of User saved");
-        return springDataRestRepository.save(user);
+        return springDataMongoRestRepository.save(user);
     }
 	
 	@PutMapping("/updateUser/{id}")
     public User updateUserData(@PathVariable(value = "id") String userId, @RequestBody User user) {
         LOGGER.info("updateUserData -> Update the existing User Record");
-        User model = springDataRestRepository.findById(userId)
-        		.orElseThrow(() -> new SpringDataRestException("User Record not found", userId));
+        User model = springDataMongoRestRepository.findById(userId)
+        		.orElseThrow(() -> new SpringDataMongoRestException("User Record not found", userId));
         if (null != model) {
-        	return springDataRestRepository.save(user);
+        	return springDataMongoRestRepository.save(user);
 		}
         return model;
     }
 
 	@GetMapping("/getUser/{id}")
     public User getUserDataById(@PathVariable(value = "id") String userId) {
-    	User user = springDataRestRepository.findById(userId)
-    			.orElseThrow(() -> new SpringDataRestException("User Record not found", userId));
+    	User user = springDataMongoRestRepository.findById(userId)
+    			.orElseThrow(() -> new SpringDataMongoRestException("User Record not found", userId));
     	LOGGER.info("getUserDataById -> Fetch the User Detail by userId as : {}", userId);
         return user;
     }
 	
 	@GetMapping("/getUserByFirstName/{firstName}")
     public List<User> getUserDataByFirstName(@PathVariable(value = "firstName") String firstName) {
-    	List<User> user = springDataRestRepository.findByFirstName(firstName);
+    	List<User> user = springDataMongoRestRepository.findByFirstName(firstName);
     	LOGGER.info("getUserDataByFirstName -> Fetch the User Detail by First Name as : {}", firstName);
         return user;
     }
 	
 	@GetMapping("/getUserByLastName/{lastName}")
     public List<User> getUserDataByLastName(@PathVariable(value = "lastName") String lastName) {
-		List<User> user = springDataRestRepository.findByLastName(lastName);
+		List<User> user = springDataMongoRestRepository.findByLastName(lastName);
     	LOGGER.info("getUserDataByLastName -> Fetch the User Detail by Last Name as : {}", lastName);
         return user;
     }
 	
 	@GetMapping("/getUserByMobileNo/{mobileNo}")
     public User getUserDataByMobileNo(@PathVariable(value = "mobileNo") String mobileNo) {
-    	User user = springDataRestRepository.findByMobileNo(mobileNo);
+    	User user = springDataMongoRestRepository.findByMobileNo(mobileNo);
     	LOGGER.info("getUserDataByMobileNo -> Fetch the User Detail by Mobile No as : {}", mobileNo);
         return user;
     }
 	
 	@GetMapping("/getUserByEmail/{email}")
     public User getUserDataByEmail(@PathVariable(value = "email") String email) {
-    	User user = springDataRestRepository.findByEmail(email);
+    	User user = springDataMongoRestRepository.findByEmail(email);
     	LOGGER.info("getUserDataByEmail -> Fetch the User Detail by Email as : {}", email);
         return user;
     }
 	
 	@GetMapping("/getUserByPan/{panNo}")
     public User getUserDataByPan(@PathVariable(value = "panNo") String panNo) {
-    	User user = springDataRestRepository.findByPanNo(panNo);
+    	User user = springDataMongoRestRepository.findByPanNo(panNo);
     	LOGGER.info("getUserDataByPan -> Fetch the User Detail by PAN No as : {}", panNo);
         return user;
     }
 	
 	@DeleteMapping("/deleteUser/{id}")
     public void deleteUser(@PathVariable(value = "id") String userId) {
-		User user = springDataRestRepository.findById(userId)
-				.orElseThrow(() -> new SpringDataRestException("User not found", userId));
-	    springDataRestRepository.delete(user);
+		User user = springDataMongoRestRepository.findById(userId)
+				.orElseThrow(() -> new SpringDataMongoRestException("User not found", userId));
+	    springDataMongoRestRepository.delete(user);
     	LOGGER.info("deleteUser -> Delete the User of userId : {}", userId);
     }
 	
 	@GetMapping("/getUserByName/{firstName}/{lastName}")
     public User getUserByName(@PathVariable(value = "firstName") String firstName, 
     		@PathVariable(value = "lastName") String lastName) {
-    	User user = springDataRestRepository.findByFirstAndLastName(firstName, lastName);
+    	User user = springDataMongoRestRepository.findByFirstAndLastName(firstName, lastName);
     	LOGGER.info("getUserByName -> Fetch the User Detail by FirstName and LastName as : {}, {}", firstName, lastName);
         return user;
     }
