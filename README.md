@@ -1,10 +1,10 @@
-# spring-data-masterclass
+# spring-data-mongo-masterclass
 
 ## A good understanding of the usage of spring-data with REST Service and using Mongo as local Database
 
 ### Software Required
-* [Java 1.8](https://www.oracle.com/in/java/technologies/javase/javase-jdk8-downloads.html)
-* [Spring tool Suite](https://spring.io/tools) or [Eclipse](https://www.eclipse.org/downloads/packages/release/helios/sr1/eclipse-ide-java-developers)
+* [Java 1.8](https://www.oracle.com/in/java/technologies/javase/javase8-archive-downloads.html)
+* [Spring tool Suite](https://spring.io/tools) or [Eclipse](https://www.eclipse.org/downloads/packages/)
 * [Apache Maven](https://maven.apache.org/download.cgi)
 * [Git Bash](https://gramfile.com/git-bash-download/)
 * [MongoDB](https://www.mongodb.com/try/download/community) - Download the Community Edition
