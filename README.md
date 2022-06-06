@@ -43,22 +43,22 @@
 #### Dummy JSON object
 * Body for the <strong>POST</strong> Method   
 <code>{
-	"firstName" : ${firstName},
-	"middleName" : ${middleName},
-	"lastName" : ${lastName},
-	"mobileNo" : ${mobileNo},
-	"email" : ${email},
-	"panNo" : ${panNo}
+	"firstName" : "First Name",
+	"middleName" : "",
+	"lastName" : "Last Name",
+	"mobileNo" : "1234567890",
+	"email" : "test@email.com",
+	"panNo" : "ABCDE1234F"
 }</code>
 * Body for the <strong>PUT</strong> method
 <code>{
-	“id” : ${mongo_ID},
-	"firstName" : ${firstName},
-	"middleName" : ${middleName},
-	"lastName" : ${lastName},
-	"mobileNo" : ${mobileNo},
-	"email" : ${email},
-	"panNo" : ${panNo}
+	"id" : "6rt67erger45",
+	"firstName" : "First Name",
+	"middleName" : "",
+	"lastName" : "Last Name",
+	"mobileNo" : "1234567890",
+	"email" : "test@email.com",
+	"panNo" : "ABCDE1234F"
 }</code>
 
 	
