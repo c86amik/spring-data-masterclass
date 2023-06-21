@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring-data-mongo-crud
+    name: spring-data-mongo-masterclass
   profiles: default
   data:
     mongodb:
