@@ -12,7 +12,7 @@ public class SpringDataMongoRestApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringDataMongoRestApplication.class, args);
-		LOGGER.info("Spring Data REST Service Started");
+		LOGGER.info("Spring Data Mongo Connection Started");
 	}
 
 }
