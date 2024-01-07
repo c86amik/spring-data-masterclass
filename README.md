@@ -15,7 +15,7 @@
 ### Steps to clone and run the application
 * Install MongoDb
 * After installing, set the Environment Variable <strong>MONGO_HOME</strong>
-* To verify open Command Prompt and type <code>mongo -version</code>
+* To verify open Command Prompt and type <code>mongod -version</code>
 * Type <code>mongod</code> in the open terminal. It will run the daemon process of Mongo
 * Open Git Bash or even you can open Command Prompt (if you are using Windows) or Terminal (if you are using MAC) in your machine
 * Clone the application from github.com as   
